@@ -1,0 +1,15 @@
+INSERT INTO public.t_product(birthday_policyholder, currency, date_create, date_end,
+date_start, day_total, email, payment_type, phone, policyholder_insured, status, sum,
+sumru, insured_last_name, insured_name, policyholder_insured_last_name, policyholder_insured_name)
+  VALUES ('1990-12-27 00:00:00', 'EU', '2019-12-27 00:00:00', '2021-12-26 23:59:59',
+'2020-12-27 00:00:00', 366, '1@1.com', 'CARD', 11111111111, true,  true,  100, 6500,
+'Smith', 'Jesse', 'Elvis', 'Dan');
+
+INSERT INTO public.t_product(birthday_policyholder, currency, date_create, date_end,
+date_start, day_total, email, payment_type, phone, policyholder_insured, status, sum,
+sumru, insured_last_name, insured_name, policyholder_insured_last_name, policyholder_insured_name)
+VALUES ('1980-12-27 00:00:00', 'EU', '2019-12-20 00:00:00', '2021-12-25 23:59:59',
+'2020-12-26 00:00:00', 366, '2@2.com', 'CARD', 22222222222, true,  true,  100, 6500,
+'Smith2', 'Jesse2', 'Elvis2', 'Dan2'), ('1985-12-27 00:00:00', 'EU', '2019-12-28 00:00:00', '2021-12-20 23:59:59',
+'2020-12-21 00:00:00', 366, '3@3.com', 'CARD', 11111111111, true,  true,  100, 6500,
+'Smith3', 'Jesse3', 'Elvis3', 'Dan3');
