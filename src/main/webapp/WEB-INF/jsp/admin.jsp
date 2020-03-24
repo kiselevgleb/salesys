@@ -26,7 +26,7 @@
 
     <div class="wrapper">
         <div class="container">
-            <h3 id="h3"><spring:message code="app.userList"/></h3>
+            <h3 id="h3form:form"><spring:message code="app.userList"/></h3>
             <div class="row">
                 <div class="fresh-table toolbar-color-blue">
                     <div class="toolbar">
@@ -54,11 +54,10 @@
                         <c:forEach items="${allUsers}" var="user">
                             <tr>
                                 <td>${user.id}</td>
-                                <td>${user.username}</td>
+                                <td id="userN">${user.username}</td>
                                 <td>${user.password}</td>
                                 <td><c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach></td>
                                 <td>
-
                                     <form action="${pageContext.request.contextPath}/admin" method="post">
                                         <input type="hidden" name="userId" value="${user.id}"/>
                                         <input type="hidden" name="action" value="delete"/>
@@ -66,10 +65,9 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary" onclick="edit(${user.username}, ${user.id})">
+                                    <button class="btn btn-primary" onclick="edit(this)">
                                         <span class="fa fa-pencil"></span>
                                     </button>
-
                                 </td>
                             </tr>
                         </c:forEach>
@@ -79,8 +77,7 @@
         </div>
     </div>
 
-
-    <div class="modal-fade" tabindex="-1" id="editRow">
+    <div class="modal-fade" tabindex="-1" id="newRow">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -89,10 +86,41 @@
                 </div>
                 <div class="form-group">
                     <form:form method="POST" modelAttribute="user" class="form-signin">
-                        <%--                        <h2><spring:message code="user.reg"/></h2>--%>
                         <div class="form-group">
                             <spring:message code="user.name" var="name" />
+                            <form:input type="text" path="username"  placeholder= "${name}" autofocus="true" class="form-control"></form:input>
+                            <form:errors path="username" id="errName"></form:errors>
+                                ${usernameError}
+                            <input type="hidden" name="errUser" id="errName" value="${usernameError}"/>
+                        </div>
+                        <div class="form-group">
+                            <spring:message code="user.pass" var="pass" />
+                            <form:input type="password" path="password" placeholder="${pass}" class="form-control"></form:input>
+                        </div>
+                        <div class="form-group">
+                            <spring:message code="user.pass.confirm" var="confirm" />
+                            <form:input type="password" path="passwordConfirm" placeholder="${confirm}" class="form-control"></form:input>
+                            <input type="hidden" name="userId"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-save" ><span class="fa fa-check"></span><spring:message code="user.save"/></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()"><span class="fa fa-close"></span><spring:message code="user.cancel"/></button>
+                    </form:form>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal-fade" tabindex="-1" id="editRow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalTitleEdit"><spring:message code="user.edit"/></h4>
+                    <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()">&times;</button>
+                </div>
+                <div class="form-group">
+                    <form:form method="POST" modelAttribute="user" class="form-signin">
+                        <div class="form-group">
+                            <spring:message code="user.name" var="name" />
                             <form:input type="text" path="username"  placeholder= "${name}" autofocus="true" class="form-control" id="editName"></form:input>
                             <form:errors path="username" id="errName"></form:errors>
                                 ${usernameError}
@@ -105,10 +133,7 @@
                         <div class="form-group">
                             <spring:message code="user.pass.confirm" var="confirm" />
                             <form:input type="password" path="passwordConfirm" placeholder="${confirm}" class="form-control"></form:input>
-<%--                            <input type="hidden" name="action" value="save"/>--%>
                             <input type="hidden" name="userId" id="editUserId"/>
-<%--                            <form:errors path="password"></form:errors>--%>
-<%--                                ${passwordError}--%>
                         </div>
                         <button type="submit" class="btn btn-primary" id="btn-save" ><span class="fa fa-check"></span><spring:message code="user.save"/></button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()"><span class="fa fa-close"></span><spring:message code="user.cancel"/></button>
@@ -117,14 +142,12 @@
             </div>
         </div>
     </div>
-
 </section>
 </body>
 <jsp:include page="i18n.jsp">
     <jsp:param name="page" value="user"/>
 </jsp:include>
 </html>
-
 
 </section>
 </body>

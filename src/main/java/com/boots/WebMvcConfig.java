@@ -16,11 +16,10 @@ import java.util.Locale;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-
     @Bean(name = "localeResolver")
     public LocaleResolver getLocaleResolver()  {
         CookieLocaleResolver resolver= new CookieLocaleResolver();
-        resolver.setCookieDomain("myAppLocaleCookie");
+//        resolver.setCookieDomain("myAppLocaleCookie");
         resolver.setCookieMaxAge(60*60);
 //        resolver.setDefaultLocale(Locale.R);
         return resolver;
@@ -39,6 +38,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //        messageSource.setCacheSeconds(5);
 //        return messageSource;
     }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor localeInterceptor = new LocaleChangeInterceptor();

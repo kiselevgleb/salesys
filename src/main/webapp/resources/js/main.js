@@ -146,8 +146,9 @@ $(document).ready(function () {
 });
 
 function add() {
-    $("#editRow").show();
+    $("#newRow").show();
 }
+
 // function show() {
 //     if (document.getElementById("errName").getAttribute("err")!=null){
 //         $("#editRow").show();
@@ -155,13 +156,37 @@ function add() {
 // }
 function closeNoty() {
     // if (document.getElementById("errName").getAttribute("usernameError").eq(null)){
-        $("#editRow").hide();
+    $("#editRow").hide();
+    $("#newRow").hide();
     // }
 }
 
-function edit(name,id) {
+// var editBut = document.querySelector("#editBut");
+// console.log(editBut)
+
+function edit(id) {
+    // console.log(id.closest('tr').childNodes.item(0).textContent)
+    // console.log(id.closest('tr').childNodes.item(1).textContent)
+
+    // console.log(n.toString())
+    // var name = document.querySelector("#nameBut");
+    // var id = document.querySelector("#idBut");
+    //
+    // console.log(name)
+    // console.log(id)
+
     $("#editRow").show();
-    document.getElementById('editName').setAttribute("value", name);
-    // document.getElementById('editUserId').setAttribute("value", id);
+    //
+    document.getElementById('editName').setAttribute("value", id.closest('tr').childNodes.item(1).textContent);
+    document.getElementById('editUserId').setAttribute("value", id.closest('tr').childNodes.item(0).textContent);
 }
 
+// editBut.addEventListener("click", edit);
+// function path(p) {
+//     var pathWithout=p;
+//     if(p.endswith("/")){
+//         pathWithout=p.substring(0, str.length -3);
+//     }
+//     return pathWithout;
+//
+// }

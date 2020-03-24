@@ -32,26 +32,28 @@
 
                     <div class="card-border-dark" >
                         <div class="row-filter">
+                            <div class="toolbar-size">
+<%--                                <div class="row" id="rowXS">--%>
 
-                            <form id="filter">
+                                <form id="filter">
                                 <div class="col-sm-2">
-                                    <label for="startDate"><spring:message code="list.startDate"/></label>
+                                    <label for="startDate" class="hidden-xs"><spring:message code="list.startDate"/></label>
                                     <input type="date" class="form-control1" name="startDate" id="startDate" autocomplete="off">
                                 </div>
 <%--                                <div class="col-sm-1"></div>--%>
                                 <div class="col-sm-2">
-                                    <label for="endDate"><spring:message code="list.endDate"/></label>
+                                    <label for="endDate" class="hidden-xs"><spring:message code="list.endDate"/></label>
                                     <input type="date"  class="form-control1" name="endDate" id="endDate" autocomplete="off">
                                 </div>
 <%--                                <div class="col-sm-1"></div>--%>
-                                <div class="col-sm-2" id="btn-time">
-                                    <label for="startTime"><spring:message code="list.startTime"/></label>
-                                    <input type="time" class="form-control1" name="startTime" id="startTime" autocomplete="off" value="00:00">
+                                <div class="col-sm-2 hidden-xs" id="btn-time">
+                                    <label for="startTime" class="hidden-xs"><spring:message code="list.startTime"/></label>
+                                    <input type="time" class="form-control-time" name="startTime" id="startTime" autocomplete="off" value="00:00">
                                 </div>
 <%--                                <div class="col-sm-1"></div>--%>
-                                <div class="col-sm-2" >
-                                    <label for="endTime"><spring:message code="list.endTime"/></label>
-                                    <input type="time" class="form-control1" name="endTime"  id="endTime" autocomplete="off" value="00:00">
+                                <div class="col-sm-2 hidden-xs" >
+                                    <label for="endTime" class="hidden-xs"><spring:message code="list.endTime"/></label>
+                                    <input type="time" class="form-control-time" name="endTime"  id="endTime" autocomplete="off" value="00:00">
                                 </div>
 
                                 <div class="col-sm-2" id="btn-sort">
@@ -64,7 +66,9 @@
                                     </button>
                                 </div>
                             </form>
+<%--                                </div>--%>
 
+                            </div>
                         </div>
                     </div>
 

@@ -24,17 +24,17 @@
 
   <div class="row" id="row-index">
   <div class="col-sm-4" id="col-index">
-    <form action="/list/">
+    <form action="/list">
       <button class="btn btn-lg btn-primary btn-block" type="submit" id="button-index">
         <spring:message code="index.prod"/></button>
     </form>  </div>
   <div class="col-sm-4" id="col-index">
-    <form action="/list/">
+    <form action="/list">
       <button class="btn btn-lg btn-primary btn-block" type="submit" id="button-index">
         <spring:message code="index.prod2"/></button>
     </form>  </div>
   <div class="col-sm-4" id="col-index">
-    <form action="/list/">
+    <form action="/list">
       <button class="btn btn-lg btn-primary btn-block" type="submit" id="button-index">
         <spring:message code="index.prod3"/></button>
     </form>  </div>

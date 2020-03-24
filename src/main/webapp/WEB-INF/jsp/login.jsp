@@ -19,7 +19,7 @@
 <body>
 
 <sec:authorize access="isAuthenticated()">
-    <% response.sendRedirect("/"); %>
+    <% response.sendRedirect("/products"); %>
 </sec:authorize>
 <div class="container">
     <form class="form-signin" method="POST" action="/login">
