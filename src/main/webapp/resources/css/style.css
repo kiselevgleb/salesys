@@ -243,7 +243,6 @@ body {
     /*height: 400px;*/
 }
 
-
 #filter label {
     color: white;
     font-weight: normal;
@@ -266,27 +265,10 @@ body {
     border-color: transparent;
 }
 
-/*#col-index{*/
-/*display: block;*/
-/*position: fixed;*/
-/*min-height:100%;*/
-/*overflow:hidden;*/
-
-/*height: 100%;*/
-/*border-radius: 10px;*/
-/*margin: 10px;*/
-/*padding-left: 10px;*/
-/*background-color: #82b7ca;*/
-
-/*}*/
-/*#col-index-big{*/
-/*    display: inline-block;*/
-/*    margin-left: 250px;*/
-/*}*/
-
 #button-index {
     background-color: #4087ea;
     border: 0px solid black;
+    margin-bottom: 10px;
 }
 
 #row-index {
@@ -299,16 +281,3 @@ body {
     color: #337ab7;
     font-size: 18px;
 }
-
-/*#rowXS {*/
-/*    height: 60px;*/
-/*    !*border: 10px;*!*/
-/*    background-color: #eee;*/
-/*}*/
-
-/*.toolbar-size {*/
-/*    height: auto;*/
-/*    background-color: #4087ea;*/
-/*    margin: 0 auto;*/
-/*    padding: 0 auto;*/
-/*}*/
